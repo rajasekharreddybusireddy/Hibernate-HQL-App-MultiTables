@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+		<!-- Database Properties -->
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@localhost:1521/XE
+		</property>
+		<property name="hibernate.connection.user">
+			system
+		</property>
+		<property name="hibernate.connection.password">
+			admin
+		</property>
+
+		<property name="hbm2ddl.auto">update</property>
+
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+
+
+		<!-- Hibernate properties -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Mapping Classes -->
+		<mapping class="com.hql.entity.Author" />
+		<mapping class="com.hql.entity.Book" />
+
+	</session-factory>
+</hibernate-configuration>
